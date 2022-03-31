@@ -1,0 +1,15 @@
+package audiosynth.waveform;
+
+import audiosynth.Signal;
+
+public class TriangularWave implements Waveform {
+    @Override
+    public Signal createSignal(double wavelength) {
+        return n -> Math.abs(n / wavelength % 1 - 0.5) * 4 - 1;
+    }
+
+    @Override
+    public String toString() {
+        return "TriangularWave []";
+    }
+}
